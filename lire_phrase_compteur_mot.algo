@@ -1,0 +1,33 @@
+Algorithme CompterPhrase
+    Var :
+        phrase : STRING 
+        longueur : INTEGER
+        compteurMots : INTEGER
+        compteurVoyelles : INTEGER
+    
+    BEGIN
+        Écrire "Entrez une phrase se terminant par un point : "
+        Read (phrase)
+        
+        longueur <- 0
+        compteurMots <- 0
+        compteurVoyelles <- 0
+        
+        //Pour chaque caractère dans phrase Faire
+            longueur <- longueur + 1
+            
+            IF (caractère <> ' ' AND caractère <> '.' ) THEN
+                
+                IF caractère = 'a' OR caractère = 'e' OR caractère = 'i' OR caractère = 'o' OR caractère = 'u' THEN
+                    compteurVoyelles <- compteurVoyelles + 1
+                IF caractère <> ' ' AND (caractère suivant = ' ' OR caractère suivant = '.') Alors
+                    compteurMots <- compteurMots + 1
+                End If
+            End If
+        End If
+        
+        write /*Longueur de la phrase :*/, (longueur)
+        write /*"Nombre de mots dans la phrase :*/, (compteurMots)
+        Write /*Nombre de voyelles dans la phrase :*/, (compteurVoyelles)
+    End
+Fin Algorithme
